@@ -1,0 +1,12 @@
+C:\Users\joaco\Desktop\work\C#\Core\bin\Debug\net8.0\Core.deps.json
+C:\Users\joaco\Desktop\work\C#\Core\bin\Debug\net8.0\Core.dll
+C:\Users\joaco\Desktop\work\C#\Core\bin\Debug\net8.0\Core.pdb
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.dll
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\refint\Core.dll
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.pdb
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\ref\Core.dll
+C:\Users\joaco\Desktop\work\C#\Core\obj\Debug\net8.0\Core.sourcelink.json
