@@ -30,6 +30,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
+app.UseCors("CorsPolicy");
+
 app.UseAuthorization();
 
 app.MapControllers();
@@ -39,11 +41,13 @@ var services = scope.ServiceProvider;
 var context = services.GetRequiredService<StoreContext>();
 var logger = services.GetRequiredService<ILogger<Program>>();
 
-try {
+try
+{
     await context.Database.MigrateAsync();
     await StoreContextSeed.SeedAsync(context);
 }
-catch (Exception ex) {
+catch (Exception ex)
+{
     logger.LogError(ex, "An error occured during migration.");
 }
 
