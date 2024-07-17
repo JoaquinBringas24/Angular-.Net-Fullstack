@@ -8,34 +8,30 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShopParams } from '../models/shopParams';
 import { PagingHeaderComponent } from '../paging-header/paging-header.component';
 import { PagerComponent } from '../pager/pager.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [
-    ProductItemComponent,
-    PagingHeaderComponent,
-    PagerComponent],
+  imports: [ProductItemComponent, PagingHeaderComponent, PagerComponent, NgIf],
   templateUrl: './shop.component.html',
-  styleUrl: './shop.component.scss'
+  styleUrl: './shop.component.scss',
 })
-export class ShopComponent implements OnInit{
+export class ShopComponent implements OnInit {
   @ViewChild('search') searchTerm?: ElementRef;
   products: Product[] = [];
   brands: Brand[] = [];
   types: Type[] = [];
   shopParams = new ShopParams();
   sortOptions = [
-    {name: "Alphabetical", value:"name"},
-    {name: "Price: Low to high", value:"priceAsc"},
-    {name: "Price: High to low", value:"priceDesc"},
+    { name: 'Alphabetical', value: 'name' },
+    { name: 'Price: Low to high', value: 'priceAsc' },
+    { name: 'Price: High to low', value: 'priceDesc' },
   ];
 
   totalCount = 0;
 
-  constructor(private shopServices: ShopService) {
-
-  };
+  constructor(private shopServices: ShopService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -45,25 +41,25 @@ export class ShopComponent implements OnInit{
 
   getProducts() {
     this.shopServices.getProducts(this.shopParams).subscribe({
-      next: response => {
+      next: (response) => {
         this.products = response.data;
         this.shopParams.pageNumber = response.pageIndex;
         this.shopParams.pageSize = response.pageSize;
         this.totalCount = response.count;
       },
-      error: error => console.log(error)
+      error: (error) => console.log(error),
     });
   }
   getBrands() {
     this.shopServices.getBrands().subscribe({
-      next: response => this.brands = [{id: 0, name: "All"}, ...response],
-      error: error => console.log(error)
+      next: (response) => (this.brands = [{ id: 0, name: 'All' }, ...response]),
+      error: (error) => console.log(error),
     });
   }
   getTypes() {
     this.shopServices.getTypes().subscribe({
-      next: response => this.types = [{id:0, name:"All"}, ...response],
-      error: error => console.log(error)
+      next: (response) => (this.types = [{ id: 0, name: 'All' }, ...response]),
+      error: (error) => console.log(error),
     });
   }
 
@@ -102,5 +98,4 @@ export class ShopComponent implements OnInit{
     this.shopParams = new ShopParams();
     this.getProducts();
   }
-
 }
